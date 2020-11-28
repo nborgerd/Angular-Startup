@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
   posts;
   accounts;
   parsed;
+  displayedColumns: string[] = ['name'];
+
   
   constructor(private service:PostService) {}
   
@@ -19,7 +21,7 @@ export class AppComponent implements OnInit {
         .subscribe(response => {
           this.accounts = JSON.stringify(response);
           this.parsed = JSON.parse(JSON.stringify(response))
-          console.log(response);
+          console.log(this.parsed);
         });
 
   }

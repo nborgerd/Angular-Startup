@@ -11,3 +11,24 @@
       {{account.name}}
   </li>
 </ul>
+<table datatable class="row-border hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let account of parsed.Accounts.row">
+      <td>{{account.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table mat-table [dataSource]="parsed.Accounts.row">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
