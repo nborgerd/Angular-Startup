@@ -5,16 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PostService {
-  private url = 'https://jitterbittrial391201.jitterbit.net/demos_sandbox/angularAccount';
    
   constructor(private httpClient: HttpClient) { }
   
   getPosts(){
-    return this.httpClient.get(this.url);
+     return this.httpClient.get("https://jitterbitTRIAL391201.jitterbit.net/demos_sandbox/angularAccount");
   }
   
-  create(post){
-    return this.httpClient.post(this.url, JSON.stringify(post));
-  }
+
   
 }
