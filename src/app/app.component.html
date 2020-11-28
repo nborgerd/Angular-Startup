@@ -1,11 +1,13 @@
-<app-top-bar></app-top-bar>
-
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->
+<h1>Angular 10 HttpClient for Sending Http Request Example - ItSolutionStuff.com</h1>
+  
+<input 
+    (keyup.enter)="createPost(title)" #title
+    type="text" class="form-control">
+  
+<ul class="list-group">
+  <li 
+      *ngFor="let post of posts"
+      class="list-group-item">
+      {{ post.title }}
+  </li>
+</ul>
